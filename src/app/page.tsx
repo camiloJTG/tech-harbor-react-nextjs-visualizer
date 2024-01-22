@@ -1,11 +1,11 @@
 import Navbar from '@/components/common/Navbar';
-import LanguageContainer from '@/components/containers/LanguageContainer';
+import Card from '@/components/cards/Card';
 
 export default function Home() {
    return (
       <>
          <Navbar />
-         <LanguageContainer />
+         <Card />
       </>
    );
 }

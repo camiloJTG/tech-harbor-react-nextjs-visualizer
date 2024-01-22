@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import FooterButton from '@/components/cards/FooterButton';
 
-const DisplayCard = ({
+const Card = ({
    name,
    logo,
    url
@@ -34,4 +34,4 @@ const DisplayCard = ({
    );
 };
 
-export default DisplayCard;
+export default Card;
