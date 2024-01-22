@@ -29,6 +29,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "juststickers.in"
+      },
+      {
+        protocol: "https",
+        hostname: "w1.pngwing.com"
       }
     ]
   }

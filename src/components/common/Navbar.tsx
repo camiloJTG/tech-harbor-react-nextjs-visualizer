@@ -1,18 +1,19 @@
 'use client';
 
+import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-   { name: 'Languages', href: '#', current: false },
-   { name: 'Areas', href: '#', current: true },
-   { name: 'Technologies', href: '#', current: false },
-   { name: 'Libraries', href: '#', current: false }
+   { name: 'Languages', href: '/', current: false },
+   { name: 'Areas', href: 'area', current: true },
+   { name: 'Technologies', href: 'technology', current: false },
+   { name: 'Libraries', href: 'library', current: false }
 ];
 
-function classNames(...classes: any) {
+const classNames = (...classes: any) => {
    return classes.filter(Boolean).join(' ');
-}
+};
 
 const Header = () => {
    return (
@@ -27,7 +28,7 @@ const Header = () => {
                               <div className='hidden md:block'>
                                  <div className='ml-10 flex items-baseline space-x-4'>
                                     {navigation.map((item) => (
-                                       <a
+                                       <Link
                                           key={item.name}
                                           href={item.href}
                                           className={classNames(
@@ -41,7 +42,7 @@ const Header = () => {
                                           }
                                        >
                                           {item.name}
-                                       </a>
+                                       </Link>
                                     ))}
                                  </div>
                               </div>

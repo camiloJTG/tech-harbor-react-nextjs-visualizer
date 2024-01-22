@@ -1,11 +1,10 @@
-import Navbar from '@/components/common/Navbar';
-import Card from '@/components/cards/Card';
+import MainLayout from '@/components/layouts/Main';
+import Visualizer from '@/components/containers/Language';
 
 export default function Home() {
    return (
-      <>
-         <Navbar />
-         <Card />
-      </>
+      <MainLayout>
+         <Visualizer />
+      </MainLayout>
    );
 }
