@@ -9,4 +9,6 @@ export interface CardProps {
    logo: string;
    id?: string;
    url?: string;
+   redirect?: string;
+   buttonName?: string;
 }

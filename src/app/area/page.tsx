@@ -1,10 +1,10 @@
 import MainLayout from '@/components/layouts/Main';
-import Language from '@/components/containers/Language';
+import AreaContainer from '@/components/containers/Area';
 
 const Area = () => {
    return (
       <MainLayout>
-         <Language />
+         <AreaContainer />
       </MainLayout>
    );
 };
