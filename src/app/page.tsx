@@ -1,10 +1,10 @@
-import MainLayout from '@/components/layouts/Main';
-import Visualizer from '@/components/containers/Language';
+import MainLayout from '@/components/layouts/main.layout';
+import LanguageContainer from '@/components/containers/language.container';
 
 export default function Home() {
    return (
       <MainLayout>
-         <Visualizer />
+         <LanguageContainer />
       </MainLayout>
    );
 }
