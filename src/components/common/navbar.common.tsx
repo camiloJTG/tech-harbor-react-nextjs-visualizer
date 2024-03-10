@@ -1,5 +1,4 @@
 'use client';
-
 import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
 
@@ -7,7 +6,7 @@ const classNames = (...classes: any) => {
    return classes.filter(Boolean).join(' ');
 };
 
-const Navbar = () => {
+const NavbarCommon = () => {
    return (
       <div className='min-h-full'>
          <Disclosure as='nav' className='bg-gray-800'>
@@ -33,4 +32,4 @@ const Navbar = () => {
    );
 };
 
-export default Navbar;
+export default NavbarCommon;

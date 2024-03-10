@@ -1,24 +1,28 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import CardCommon from '@/components/common/card.common';
-import { languageList } from '@/services';
+import { findTechnologyByLanguage } from '@/services';
 import { Language } from '@/interfaces';
 
-const LanguageContainer = () => {
+const TechnologyContainer = () => {
    const [language, setLanguage] = useState<Language[]>([]);
 
    const router = useRouter();
+   const params = useParams();
+
    const handleOnRedirectPage = (id: string) =>
       router.push(`technology/${id[0]}`);
 
    useEffect(() => {
       const fetchData = async () => {
-         const { data } = await languageList();
+         const { data } = await findTechnologyByLanguage(
+            '98852eba-ab61-48fc-a42e-8ad6cef716c6'
+         );
          setLanguage(data);
       };
       fetchData();
-   }, []);
+   }, [params]);
 
    return (
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
@@ -40,4 +44,4 @@ const LanguageContainer = () => {
    );
 };
 
-export default LanguageContainer;
+export default TechnologyContainer;
