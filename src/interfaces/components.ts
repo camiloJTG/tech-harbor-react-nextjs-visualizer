@@ -3,5 +3,5 @@ export interface CardProps {
    logo: string;
    button: string;
    website: string;
-   onRedirect: () => void;
+   onRedirect?: () => void;
 }

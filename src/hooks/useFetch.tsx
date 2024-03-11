@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import { getLanguageList } from '@/clients';
+import { useParams } from 'next/navigation';
+import { getLanguageList, getTools } from '@/clients';
 import { Language, Tool } from '@/interfaces';
 
 type EntityType = 'Language' | 'Tool';
 
 export const useFetchData = (entity: EntityType) => {
+   const params = useParams<{ id: string }>();
    const [data, setData] = useState<(Language | Tool)[]>([]);
    const [error, setError] = useState<Error | null>(null);
    const [loading, setLoading] = useState<boolean>(true);
@@ -14,7 +16,7 @@ export const useFetchData = (entity: EntityType) => {
    useEffect(() => {
       const fetchData = async () => {
          try {
-            let result = await getDataByEntity(entity);
+            let result = await getDataByEntity(entity, [params.id]);
 
             if ('data' in result) {
                const { currentPage, data, total } = result;
@@ -29,13 +31,13 @@ export const useFetchData = (entity: EntityType) => {
          }
       };
       fetchData();
-   }, [entity]);
+   }, [entity, params]);
 
    return { data, error, loading, total, currentPage };
 };
 
-const getDataByEntity = async (entity: EntityType) => {
+const getDataByEntity = async (entity: EntityType, args?: string[]) => {
    if (entity === 'Language') return await getLanguageList();
-
+   if (entity === 'Tool') return await getTools(args![0]);
    throw new Error('Opt is invalid');
 };
