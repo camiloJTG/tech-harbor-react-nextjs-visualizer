@@ -1,10 +1,10 @@
-import MainLayout from '@/components/layouts/main.layout';
-import LanguageContainer from '@/components/containers/language.container';
+import Main from '@/components/layouts/Main';
+import Language from '@/components/containers/Language';
 
 export default function Home() {
    return (
-      <MainLayout>
-         <LanguageContainer />
-      </MainLayout>
+      <Main>
+         <Language />
+      </Main>
    );
 }
